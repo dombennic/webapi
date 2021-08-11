@@ -158,7 +158,7 @@ var routes = function () {
         var pointz;
         var data = req.body; // get form data from the HTTP body
         // console.log(data.bigmac + data.filletofish + data.mcspicy + data.happymeal + data.doublecheeseburger);
-        db.addcart(data.bigmac, data.filletofish, data.mcspicy, data.happymeal, data.doublecheeseburger, data.username, data.time, data.rating, function (err, cart) {
+        db.addcart(data.bigmac, data.filletofish, data.mcspicy, data.happymeal, data.doublecheeseburger, data.username, data.time, data.rating, data.mode, function (err, cart) {
             if (err) {
                 res.status(500).send("Unable to add to cart");
             } else {
@@ -194,7 +194,7 @@ var routes = function () {
         //simulate add item to db
         var data = req.body; // get form data from the HTTP body
         // console.log(data.bigmac + data.filletofish + data.mcspicy + data.happymeal + data.doublecheeseburger);
-        db.addcart1(data.doubledownburger, data.ricebucket, data.twopcschicken, data.shroom, data.snacker, data.username, data.time, data.rating, function (err, cart) {
+        db.addcart1(data.doubledownburger, data.ricebucket, data.twopcschicken, data.shroom, data.snacker, data.username, data.time, data.rating, data.mode, function (err, cart) {
             if (err) {
                 res.status(500).send("Unable to add to cart");
             } else {
@@ -231,7 +231,7 @@ var routes = function () {
         //simulate add item to db
         var data = req.body; // get form data from the HTTP body
         // console.log(data.bigmac + data.filletofish + data.mcspicy + data.happymeal + data.doublecheeseburger);
-        db.addcart2(data.taro, data.whopper, data.swiss, data.onion, data.tender, data.username, data.time, data.rating, function (err, cart) {
+        db.addcart2(data.taro, data.whopper, data.swiss, data.onion, data.tender, data.username, data.time, data.rating, data.mode, function (err, cart) {
             if (err) {
                 res.status(500).send("Unable to add to cart");
             } else {
@@ -329,20 +329,40 @@ var routes = function () {
     });
 
     //edit user
-    router.put('/api/users', function (req, res) {
+    router.put("/api/users", function (req, res) {
+
         var data = req.body;
-        db.updateUser(data.id, data.email, data.phone, data.password, function (err, user) {
-            // if (err) {
-            //     res.status(500).send("Unable to update account");
-            // } else {
-            //     if (users == null) {
-            //         res.status(200).send("Account is not updated");
-            //     } else {
-            //         res.status(200).send(user);
-            //     }
-            // }
-            res.end();
+        db.updateUser(res.locals.user._id, data.email, data.phone, data.password, function (err, user) {
+            if (err) {
+                res.status(500).send("Unable to update account");
+            } else {
+                if (user == null) {
+                    res.status(200).send("Account is not updated");
+                } else {
+                    res.status(200).send(user);
+                }
+            }
+            // res.end();
         });
+    });
+
+    router.put('/api/flights/:id', function (req, res) {
+        var id = req.params.id;
+        var data = req.body;
+        db.updateFlightDetails(id, data.flightNumber, data.source, data.destination, data.distance, function (err, flight) {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Unable to update the flights");
+            } else {
+
+                if (flight == null || flight.n == 0) {
+                    res.status(200).send("No flights were updated");
+                } else {
+                    res.status(200).send("Flights successfully updated");
+                }
+            }
+        })
+
     });
 
     router.post("/api/promotion", function (req, res) {

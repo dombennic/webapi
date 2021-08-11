@@ -34,6 +34,7 @@ var database = {
                     username: String,
                     time: String,
                     rating: Number,
+                    mode: String
 
                 });
                 kfcSchema = schema({
@@ -45,6 +46,7 @@ var database = {
                     username: String,
                     time: String,
                     rating: Number,
+                    mode: String
 
                 });
                 bkSchema = schema({
@@ -56,6 +58,7 @@ var database = {
                     username: String,
                     time: String,
                     rating: Number,
+                    mode: String
                 });
                 promoSchema = schema({
 
@@ -103,7 +106,7 @@ var database = {
         userModel.findByIdAndUpdate(id, { point: point }, callback);
     },
 
-    addcart: function (b, f, m, h, d, u, ti, ra, callback) {
+    addcart: function (b, f, m, h, d, u, ti, ra, de, callback) {
         var newMcd = new mcdModel({
             bigmac: b,
             filletofish: f,
@@ -113,11 +116,12 @@ var database = {
             username: u,
             time: ti,
             rating: ra,
+            mode: de
         });
         newMcd.save(callback);
     },
 
-    addcart1: function (d, r, t, sh, s, u, ti, ra, callback) {
+    addcart1: function (d, r, t, sh, s, u, ti, ra, de, callback) {
         var newKfc = new kfcModel({
             doubledownburger: d,
             ricebucket: r,
@@ -126,12 +130,13 @@ var database = {
             snacker: s,
             username: u,
             time: ti,
-            rating: ra
+            rating: ra,
+            mode: de,
         });
         newKfc.save(callback);
     },
 
-    addcart2: function (ta, w, s, o, t, u, ti, ra, callback) {
+    addcart2: function (ta, w, s, o, t, u, ti, ra, de, callback) {
         var newBk = new bkModel({
             taro: ta,
             whopper: w,
@@ -140,7 +145,8 @@ var database = {
             tender: t,
             username: u,
             time: ti,
-            rating: ra
+            rating: ra,
+            mode: de
         });
         newBk.save(callback);
     },
@@ -156,7 +162,9 @@ var database = {
             password: p
         };
         userModel.findByIdAndUpdate(id, updatedUser, callback);
+        // userModel.findOneAndUpdate({ username: username }, callback);
     },
+
 
     // ordersrating: function (id, rating, callback) {
     //     mcdModel.aggregate(id, { rating: rating }, callback)

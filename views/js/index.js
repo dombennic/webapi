@@ -66,6 +66,7 @@ function addcart() {
         point: sessionStorage.point,
         time: $("#time").val(),
         rating: $("#rating").val(),
+        mode: $("#mode").val(),
 
 
     }
@@ -103,6 +104,7 @@ function addcart1() {
         point: sessionStorage.point,
         time: $("#time").val(),
         rating: $("#rating").val(),
+        mode: $("#mode").val(),
 
     }
     console.log(cart.doubledownburger + cart.ricebucket + cart.twopcschicken + cart.shroom + cart.snacker);
@@ -139,6 +141,7 @@ function addcart2() {
         point: sessionStorage.point,
         time: $("#time").val(),
         rating: $("#rating").val(),
+        mode: $("#mode").val(),
 
     }
     console.log(cart.taro + cart.whopper + cart.swiss + cart.onion + cart.tender);
@@ -151,7 +154,7 @@ function addcart2() {
     })
         .done(function (data) { // if response indicates a successful login
             $(".statusMessage").text(data.message);
-            $(".foodrating").text(data.rating);
+            $(".foodrating").text("average rating: " + data.rating);
             alert("Cart Added Successfully! Points = " + data.point);
             // location.href = '/restaurants';
         })
@@ -279,34 +282,32 @@ $(".viewcart").click(function viewCart() {
 //             console.log(err.responseText);
 //         }
 //     );
-
 // });
 
+function updateUser() {
+    var updatedUser = {
 
-// function updatedUser() {
-//     var updatedUser = {
-//         id: _id,
-//         email: $("#email").val(),
-//         phone: $("#phone").val(),
-//         password: $("#password").val(),
-//     };
-//     $.ajax(
-//         {
-//             url: '/api/users',
-//             method: 'put',
-//             data: user
-//         }
-//     ).done(
-//         function (data) {
-//             alert("Account updated!");
-//         }
-//     ).fail(
-//         function (err) {
-//             console.log(err.responseText);
-//         }
-//     );
-//     return false;
-// }
+        email: $("#email").val(),
+        phone: $("#phone").val(),
+        password: $("#password").val(),
+    }
+    $.ajax(
+        {
+            url: "/api/users?token=" + sessionStorage.authToken,
+            method: "put",
+            data: updatedUser
+        }
+    ).done(
+        function (data) {
+            alert("Account updated!");
+        }
+    ).fail(
+        function (err) {
+            console.log(err.responseText);
+        }
+    );
+    return false;
+}
 
 
 
