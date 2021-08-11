@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+        form {
+            text-align: center;
+        }
+
+        /* h1 {
+            text-align: center;
+        } */
+
+        body {
+            background-color: black;
+            margin-top: 18%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        h1 {
+            position: absolute;
+            left: 51%;
+            top: 10%;
+            transform: translate(-50%, -50%);
+            display: block;
+            color: rgb(216, 216, 27);
+            font-size: 124px;
+            letter-spacing: 8px;
+            cursor: pointer;
+
+            text-align: center;
+        }
+
+        h1::before {
+            content: "Login";
+            position: absolute;
+            color: transparent;
+            background-image: repeating-linear-gradient(45deg,
+                    transparent 0,
+                    transparent 2px,
+                    white 2px,
+                    white 4px);
+            -webkit-background-clip: text;
+            top: 0px;
+            left: 0;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        h1::after {
+            content: "Login";
+            position: absolute;
+            color: transparent;
+            background-image: repeating-linear-gradient(135deg,
+                    transparent 0,
+                    transparent 2px,
+                    white 2px,
+                    white 4px);
+            -webkit-background-clip: text;
+            top: 0px;
+            left: 0px;
+            transition: 1s;
+        }
+
+        h1:hover:before {
+            top: 10px;
+            left: 10px;
+        }
+
+        h1:hover:after {
+            top: -10px;
+            left: -10px;
+        }
+
+        form {
+            font-size: 25px;
+            color: white;
+        }
+
+        .button {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 href="/restaurants">Login</h1>
+    <section>
+        <form onsubmit="return login();">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username"><br>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br>
+            <br>
+            <input class="button" type="submit" value="Login">
+        </form>
+    </section>
+    <div class="statusMessage"></div>
+    <script src='/js/jquery.min.js'></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
