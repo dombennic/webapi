@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+</head>
+
+<body>
+
+    <style>
+        .protectedSection,
+        .unprotectedSection {
+            display: none;
+        }
+
+        body {
+            background-color: rgb(47, 90, 34);
+            color: white;
+
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            flex-wrap: wrap;
+            width: auto;
+
+        }
+
+        nav a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+
+        nav a:link {
+            color: white;
+        }
+
+        nav a:visited {
+            color: yellow;
+        }
+
+        nav a:hover {
+            color: green;
+            background-color: papayawhip;
+        }
+
+        nav a:active {
+            color: red;
+        }
+
+        @media screen and (min-width: 480px) {
+            nav {
+                display: flex;
+                /* justify-content: space-between; */
+                justify-content: space-around;
+            }
+
+            nav ul {
+                display: flex;
+            }
+
+            li {
+                font-size: 22px;
+
+            }
+        }
+
+        h1 {
+            color: rgb(223, 161, 29);
+        }
+
+        /* input {
+            width: 15px;
+            height: 15px;
+        } */
+
+        .plus,
+        .minus {
+            width: 21px;
+            height: 21px;
+        }
+
+        .bm {
+            /* display: flex; */
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .sub {
+            width: 100px;
+            height: 30px;
+        }
+
+        input[type=text] {
+            width: 200%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            height: 15px;
+        }
+
+        .MCD {
+            display: flex;
+
+        }
+    </style>
+    </head>
+
+    <body>
+        <section class="unprotectedSection">
+            <nav class="menu">
+                <ul class="main-menu">
+                    <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                    <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                    <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                    <li><a href="/history" title="About Page">History</a></li>
+                    <li><a href="/cart" title="Cart">Cart</a></li>
+                    <li><a href="/member" title="Member Page">Members</a></li>
+                    <li><a href="/profile" title="Profile Page">Profile</a></li>
+                    <li><a href="/login" title=" Login Page">Login</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="protectedSection">
+            <div id="welcome"> </div>
+
+            <nav class="menu">
+                <ul class="main-menu">
+                    <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                    <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                    <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                    <li><a href="/history" title="About Page">History</a></li>
+                    <li><a href="/cart" title="Cart">Cart</a></li>
+                    <li><a href="/member" title="Member Page">Members</a></li>
+                    <li><a href="/profile" title="Profile Page">Profile</a></li>
+                    <li><a href="/logout" title=" Logout Page">Logout</a></li>
+                </ul>
+            </nav>
+
+            <!-- <script>data.message</script> -->
+            <!-- <button class="logoutBtn">Logout now</button> -->
+        </section>
+
+        <h1>Macdonald</h1>
+        <!-- <input class="favmcds" type="submit" value="★"></input> -->
+        <form onsubmit="return favtomcds();">
+            <input type="submit" value="★"></input>
+        </form>
+        <!-- <button class="favmcds" onclick="favtomcds()">Add to Favourites</button> -->
+        <!-- <button class="favmcds">★</button> -->
+        <article class="MCD">
+            <form onsubmit="return addcart();">
+                <div>
+                    <p class="bm">Big Mac</p>
+                    <!-- increment value -->
+
+                    <input type="text" id="myNumber1" placeholder="Input the quanity followed by the special request">
+
+                </div>
+
+                <div>
+                    <p class="bm">Fillet O Fish</p>
+                    <!-- increment value -->
+
+                    <input type="text" id="myNumber2" placeholder="Input the quanity followed by the special request">
+
+                </div>
+
+                <div>
+                    <p class="bm">McSpicy</p>
+                    <!-- increment value -->
+
+                    <input type="text" id="myNumber3" placeholder="Input the quanity followed by the special request">
+
+                </div>
+
+                <div>
+                    <p class="bm">Happy Meal</p>
+                    <!-- increment value -->
+
+                    <input type="text" id="myNumber4" placeholder="Input the quanity followed by the special request">
+                </div>
+
+                <div>
+                    <p class="bm">Double Cheese Burger</p>
+                    <!-- increment value -->
+                    <input type="text" id="myNumber5" placeholder="Input the quanity followed by the special request">
+
+                </div>
+
+                <br><br>
+
+                <div>
+                    <label for="time">Choose a Time:</label>
+
+                    <select name="time" id="time">
+                        <option value="1am">01:00</option>
+                        <option value="2am">02:00</option>
+                        <option value="3am">03:00</option>
+                        <option value="4am">04:00</option>
+                        <option value="5am">05:00</option>
+                        <option value="6am">06:00</option>
+                        <option value="7am">07:00</option>
+                        <option value="8am">08:00</option>
+                        <option value="9am">09:00</option>
+                        <option value="10am">10:00</option>
+                        <option value="11am">11:00</option>
+                        <option value="12am">12:00</option>
+                        <option value="1pm">13:00</option>
+                        <option value="2pm">14:00</option>
+                        <option value="3pm">15:00</option>
+                        <option value="4pm">16:00</option>
+                        <option value="5pm">17:00</option>
+                        <option value="6pm">18:00</option>
+                        <option value="7pm">19:00</option>
+                        <option value="8pm">20:00</option>
+                        <option value="9pm">21:00</option>
+                        <option value="10pm">22:00</option>
+                        <option value="11pm">23:00</option>
+                        <option value="12am">00:00</option>
+                    </select>
+                </div>
+
+                <br><br>
+
+                <div>
+                    <label for="mode">Pickup/Delivery:</label>
+
+                    <select name="mode" id="mode">
+
+                        <option value="pickup">Pick Up</option>
+                        <option value="delivery">Delivery</option>
+                    </select>
+                </div>
+
+                <br><br>
+
+                <input class="sub" type="submit" value="Add To Cart">
+
+            </form>
+
+            <form style="padding-left: 700px;">
+                <label style="margin-top: 300px;" for="rating">Rate our food choices!</label> <br>
+                <select style="height:30px;" name="rating" id="rating">
+                    <option value="1">1★</option>
+                    <option value="2">2★</option>
+                    <option value="3">3★</option>
+                    <option value="4">4★</option>
+                    <option value="5">5★</option>
+
+                </select>
+                <div id="foodrating" class="foodrating">hello</div>
+            </form>
+
+            <br><br>
+
+        </article>
+
+        <script>
+
+            document.getElementById("welcome").innerHTML = "Welcome Back," + sessionStorage.username;
+            document.getElementById("foodrating").innerHTML = "<br><br><br>Average Food Choice Rating For This Restaurant: " + rating
+
+        </script>
+    </body>
+
+</html>

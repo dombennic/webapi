@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrabPanda</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .protectedSection,
+        .unprotectedSection {
+            display: none;
+        }
+
+        body {
+            background-color: rgb(47, 90, 34);
+            color: white;
+
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            flex-wrap: wrap;
+            width: auto;
+
+        }
+
+        nav a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+
+        nav a:link {
+            color: white;
+        }
+
+        nav a:visited {
+            color: yellow;
+        }
+
+        nav a:hover {
+            color: green;
+            background-color: papayawhip;
+        }
+
+        nav a:active {
+            color: red;
+        }
+
+        @media screen and (min-width: 480px) {
+            nav {
+                display: flex;
+                /* justify-content: space-between; */
+                justify-content: space-around;
+            }
+
+            nav ul {
+                display: flex;
+            }
+
+            li {
+                font-size: 22px;
+
+            }
+        }
+
+        .delete {
+            padding-left: 50%;
+            padding-right: 50%;
+        }
+
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #hi {
+            padding-top: 200px;
+            width: 200px;
+        }
+
+
+        meter {
+            width: 300px;
+            height: 30px;
+        }
+
+        meter::-webkit-meter-optimum-value {
+            box-shadow: 0 5px 5px -5px #999 inset;
+            background-image: linear-gradient(90deg,
+                    /* #8bcf69 20%,
+                    #e6d450 40%, */
+                    #f28f68 30%,
+                    #cf82bf 60%,
+                    #719fd1 90%);
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="unprotectedSection">
+        <nav class="menu">
+            <ul class="main-menu">
+                <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                <li><a href="/history" title="About Page">History</a></li>
+                <li><a href="/cart" title="Cart">Cart</a></li>
+                <li><a href="/member" title="Member Page">Members</a></li>
+                <li><a href="/profile" title="Profile Page">Profile</a></li>
+                <li><a href="/login" title=" Login Page">Login</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="protectedSection">
+        <div id="welcome"> </div>
+
+        <nav class="menu">
+            <ul class="main-menu">
+                <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                <li><a href="/history" title="About Page">History</a></li>
+                <li><a href="/cart" title="Cart">Cart</a></li>
+                <li><a href="/member" title="Member Page">Members</a></li>
+                <li><a href="/profile" title="Profile Page">Profile</a></li>
+                <li><a href="/logout" title=" Logout Page">Logout</a></li>
+        </nav>
+
+        <!-- <script>data.message</script> -->
+        <!-- <button class="logoutBtn">Logout now</button> -->
+    </section>
+
+
+    <!-- <div id="hi">
+    </div> -->
+    <div style="text-align:center">
+        <form class="delete" onsubmit="return deleteUser();">
+
+            <input class="sub" type="submit" value="DELETE ACCOUNT">
+
+        </form>
+    </div>
+
+
+    <label for="points" id="hi"></label>
+    <meter id="points" value="0" min="0" max="300"></meter><br>
+
+    <p id="tier"></p>
+
+
+
+
+    <script>
+        document.getElementById("welcome").innerHTML = "Welcome Back," + sessionStorage.username;
+        document.getElementById("hi").innerHTML = "Hello " + sessionStorage.username + ", you have " + sessionStorage.point + " points currently!";
+        document.getElementById("points").value = sessionStorage.point;
+        if (sessionStorage.point <= 20) {
+            document.getElementById("tier").innerHTML = " Congrats! You are in member tier!";
+        }
+        else if (sessionStorage.point <= 40) {
+            document.getElementById("tier").innerHTML = " Congrats! You are in bronze tier!";
+        }
+        else if (sessionStorage.point <= 60) {
+            document.getElementById("tier").innerHTML = " Congrats! You are in silver tier!";
+        }
+        else if (sessionStorage.point <= 80) {
+            document.getElementById("tier").innerHTML = " Congrats! You are in gold tier!";
+        }
+        else {
+            document.getElementById("tier").innerHTML = " Congrats! You are in platinum tier!";
+        }
+    </script>
+
+
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

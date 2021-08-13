@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrabPanda</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .protectedSection,
+        .unprotectedSection {
+            display: none;
+        }
+
+        body {
+            background-color: rgb(47, 90, 34);
+            color: white;
+
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            flex-wrap: wrap;
+            width: auto;
+
+        }
+
+        nav a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+
+        nav a:link {
+            color: white;
+        }
+
+        nav a:visited {
+            color: yellow;
+        }
+
+        nav a:hover {
+            color: green;
+            background-color: papayawhip;
+        }
+
+        nav a:active {
+            color: red;
+        }
+
+        @media screen and (min-width: 480px) {
+            nav {
+                display: flex;
+                /* justify-content: space-between; */
+                justify-content: space-around;
+            }
+
+            nav ul {
+                display: flex;
+            }
+
+            li {
+                font-size: 22px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="unprotectedSection">
+        <nav class="menu">
+            <ul class="main-menu">
+                <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                <li><a href="/history" title="About Page">History</a></li>
+                <li><a href="/cart" title="Cart">Cart</a></li>
+                <li><a href="/member" title="Member Page">Members</a></li>
+                <li><a href="/profile" title="Profile Page">Profile</a></li>
+                <li><a href="/login" title=" Login Page">Login</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="protectedSection">
+        <div id="welcome"> </div>
+
+        <nav class="menu">
+            <ul class="main-menu">
+                <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                <li><a href="/history" title="About Page">History</a></li>
+                <li><a href="/cart" title="Cart">Cart</a></li>
+                <li><a href="/member" title="Member Page">Members</a></li>
+                <li><a href="/profile" title="Profile Page">Profile</a></li>
+                <li><a href="/logout" title=" Logout Page">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- <script>data.message</script> -->
+        <!-- <button class="logoutBtn">Logout now</button> -->
+    </section>
+
+
+
+    <div class="container">
+        <h2>Restaurants</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="/kfc"><img src="images/kfc.jpg" alt="macdonald" style="width:100%; height:650px;"></a>
+                </div>
+
+                <div class="item">
+                    <a href="/burgerking"><img src="images/burgerking.jpg" alt="Chicago"
+                            style="width:100%; height:650px"></a>
+
+                </div>
+
+                <div class="item">
+                    <a href="/macdonald"><img src="images/macdonald.jpg" alt="macdonald"
+                            style="width:100%; height:650px"></a>
+
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.getElementById("welcome").innerHTML = "Welcome Back," + sessionStorage.username;
+
+    </script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

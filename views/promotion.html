@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .protectedSection,
+        .unprotectedSection {
+            display: none;
+        }
+
+        body {
+            background-color: rgb(47, 90, 34);
+            color: white;
+
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            flex-wrap: wrap;
+            width: auto;
+
+        }
+
+        nav a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+
+        nav a:link {
+            color: white;
+        }
+
+        nav a:visited {
+            color: yellow;
+        }
+
+        nav a:hover {
+            color: green;
+            background-color: papayawhip;
+        }
+
+        nav a:active {
+            color: red;
+        }
+
+        @media screen and (min-width: 480px) {
+            nav {
+                display: flex;
+                /* justify-content: space-between; */
+                justify-content: space-around;
+            }
+
+            nav ul {
+                display: flex;
+            }
+
+            li {
+                font-size: 22px;
+
+            }
+        }
+
+        h1 {
+            color: rgb(223, 161, 29);
+        }
+
+        /* input {
+                width: 15px;
+                height: 15px;
+            } */
+
+        .plus,
+        .minus {
+            width: 21px;
+            height: 21px;
+        }
+
+        .bm {
+            /* display: flex; */
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+
+
+        input[type=text] {
+            width: 200%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            height: 15px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+
+
+            width: 50%;
+        }
+
+        .promo {
+            color: black;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="unprotectedSection">
+        <nav class="menu">
+            <ul class="main-menu">
+                <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                <li><a href="/history" title="About Page">History</a></li>
+                <li><a href="/cart" title="Cart">Cart</a></li>
+                <li><a href="/member" title="Member Page">Members</a></li>
+                <li><a href="/profile" title="Profile Page">Profile</a></li>
+                <li><a href="/login" title=" Login Page">Login</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="protectedSection">
+        <div id="welcome"> </div>
+
+        <nav class="menu">
+            <ul class="main-menu">
+                <li><a href="/restaurants" title="Restaurants">Restaurants</a></li>
+                <li><a href="/favourites" title="Product Page">Favourites</a></li>
+                <li><a href="/promotion" title="Promotions Page">Promotions</a></li>
+                <li><a href="/history" title="About Page">History</a></li>
+                <li><a href="/cart" title="Cart">Cart</a></li>
+                <li><a href="/member" title="Member Page">Members</a></li>
+                <li><a href="/profile" title="Profile Page">Profile</a></li>
+                <li><a href="/logout" title=" Logout Page">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- <script>data.message</script> -->
+        <!-- <button class="logoutBtn">Logout now</button> -->
+    </section>
+
+    <div>
+        <img src="/images/promotion.jpg" class="center">
+    </div>
+
+    <div style="text-align:center">
+        <form class="promo" onsubmit="return redeemPromotion();">
+            <label for="promo">Grilled Wagyu Beef</label><br>
+            <input class="promo" type="submit" value="Redeem Promotion (-20)">
+
+        </form>
+    </div>
+
+    <script>
+
+        document.getElementById("welcome").innerHTML = "Welcome Back," + sessionStorage.username;
+
+    </script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>
