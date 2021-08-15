@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "75070d4f-b9d4-4050-93c9-ea74925135a9",
+		"name": "Grabpanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bigmac",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "filletofish",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "mcspicy",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "happymeal",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "doublecheeseburger",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "dom",
+							"type": "text"
+						},
+						{
+							"key": "point",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "17:00",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "mode",
+							"value": "delivery",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/carts?token=ddb0604473ba278bb6ad8b46805c4b68",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"carts"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "ddb0604473ba278bb6ad8b46805c4b68"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "dom123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "dominicwhye%40gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "96196072",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/sign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "dom",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "dom@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "92337821",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users?token=cadc10bf88fc74e55c602f34523f5ccb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "cadc10bf88fc74e55c602f34523f5ccb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/:username?token=cadc10bf88fc74e55c602f34523f5ccb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						":username"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "cadc10bf88fc74e55c602f34523f5ccb"
+						}
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "dom"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viewcart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "res.locals.user.username",
+							"value": "dom",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "dom",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/viewcartkfc?token=cadc10bf88fc74e55c602f34523f5ccb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"viewcartkfc"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "cadc10bf88fc74e55c602f34523f5ccb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to favourite",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "res.locals.user.username",
+							"value": "dom123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/viewfav?token=0c1ca147d072dd8dc0acae55733c00fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"viewfav"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "0c1ca147d072dd8dc0acae55733c00fc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redeem promotion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "res.locals.user._id",
+							"value": "6118df8f82507c3e3c53cb28",
+							"type": "text"
+						},
+						{
+							"key": "data.point",
+							"value": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/promotion?token=0c1ca147d072dd8dc0acae55733c00fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"promotion"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "0c1ca147d072dd8dc0acae55733c00fc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

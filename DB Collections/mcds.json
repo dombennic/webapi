@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "611424aef9fb8c405ce37977"
+  },
+  "bigmac": "2",
+  "filletofish": "2",
+  "mcspicy": "3",
+  "happymeal": "4",
+  "doublecheeseburger": "4",
+  "username": "dom",
+  "time": "6pm",
+  "rating": 4,
+  "mode": "delivery",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "611492d27b3e0342201d6b47"
+  },
+  "bigmac": "2",
+  "filletofish": "1",
+  "mcspicy": "1",
+  "happymeal": "1",
+  "doublecheeseburger": "1",
+  "username": "Henry Lim",
+  "time": "12am",
+  "rating": 4,
+  "mode": "delivery",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6116c987d0779a4fe4f39b14"
+  },
+  "bigmac": "",
+  "filletofish": "",
+  "mcspicy": "",
+  "happymeal": "",
+  "doublecheeseburger": "",
+  "username": "dom",
+  "time": "1am",
+  "rating": 1,
+  "mode": "pickup",
+  "__v": 0
+}]

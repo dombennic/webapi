@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "6114915a7b3e0342201d6b3d"
+  },
+  "username": "Henry Lim",
+  "password": "happy123",
+  "email": "henrylim@hellomail.com",
+  "phone": 97654321,
+  "point": null,
+  "__v": 0,
+  "token": "27fd7a5d5556140291317ac260db787a"
+},{
+  "_id": {
+    "$oid": "6116ccb76e48d92d48a614bf"
+  },
+  "username": "dom",
+  "password": "1234",
+  "email": "dominicwhye@gmail.com",
+  "phone": 1294323,
+  "point": null,
+  "__v": 0,
+  "token": "9d07d0e7e8348bf98c6142109725143f"
+}]

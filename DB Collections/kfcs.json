@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "611424c3f9fb8c405ce3797c"
+  },
+  "doubledownburger": "1",
+  "ricebucket": "3",
+  "twopcschicken": "2",
+  "shroom": "4",
+  "snacker": "66",
+  "username": "dom",
+  "time": "7am",
+  "rating": 2,
+  "mode": "delivery",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6114929e7b3e0342201d6b42"
+  },
+  "doubledownburger": "1, dont want cheese",
+  "ricebucket": "1",
+  "twopcschicken": "1",
+  "shroom": "1",
+  "snacker": "1",
+  "username": "Henry Lim",
+  "time": "12am",
+  "rating": 3,
+  "mode": "delivery",
+  "__v": 0
+}]
